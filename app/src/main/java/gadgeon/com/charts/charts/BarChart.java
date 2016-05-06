@@ -22,9 +22,8 @@ public class BarChart extends Fragment {
 
     private XYPlot plot;
     private BarFormatter formatter;
-    private XYSeries series1;
-    private XYSeries series2;
-    Number[] series1Numbers = {2, null, 5, 2, 7, 4, 3, 7, 4, 5};
+    private XYSeries series;
+    Number[] series1Numbers = {2, null, 5, 2, 7, 4, 3, 7, 4, 5}; //placeholder value
 
     public BarChart() {
         // Required empty public constructor
@@ -38,7 +37,6 @@ public class BarChart extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_bar_chart, container, false);
         plot = (XYPlot) view.findViewById(R.id.plot);
         formatter = new BarFormatter(Color.argb(200, 100, 150, 100), Color.LTGRAY);
@@ -53,21 +51,13 @@ public class BarChart extends Fragment {
 
     private void updatePlot() {
 
-        // Remove all current series from each plot
         plot.clear();
 
-        // Setup our Series with the selected number of elements
-        series1 = new SimpleXYSeries(Arrays.asList(series1Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Us");
-        plot.addSeries(series1, formatter);
+        series = new SimpleXYSeries(Arrays.asList(series1Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Us");
+        plot.addSeries(series, formatter);
 
-        // Setup the BarRenderer with our selected options
         BarRenderer renderer = ((BarRenderer)plot.getRenderer(BarRenderer.class));
         renderer.setBarWidthStyle(BarRenderer.BarWidthStyle.VARIABLE_WIDTH);
-/*        renderer.setBarRenderStyle((BarRenderer.BarRenderStyle) spRenderStyle.getSelectedItem());
-        renderer.setBarWidthStyle((BarRenderer.BarWidthStyle) spWidthStyle.getSelectedItem());
-        renderer.setBarWidth(sbFixedWidth.getProgress());
-        renderer.setBarGap(sbVariableWidth.getProgress());*/
-
         plot.setRangeTopMin(0);
 
         plot.redraw();
