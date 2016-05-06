@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+
 import gadgeon.com.charts.charts.BarChart;
 import gadgeon.com.charts.charts.LineChart;
+import gadgeon.com.charts.charts.PieChartFragment;
 
 public class DrawChartActivity extends AppCompatActivity {
 
@@ -47,9 +49,9 @@ public class DrawChartActivity extends AppCompatActivity {
                 return new LineChart();
             case CHART_TYPE_BAR:
                 return new BarChart();
-/*            case CHART_TYPE_PIE:
-                return "Pie Chart";
-            case CHART_TYPE_SCATTER:
+            case CHART_TYPE_PIE:
+                return new PieChartFragment();
+ /*           case CHART_TYPE_SCATTER:
                 return "Scatter Chart";
             case CHART_TYPE_STEP:
                 return "Step Chart";
