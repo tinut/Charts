@@ -59,7 +59,8 @@ public class PieChartFragment extends Fragment {
         pie.addSeries(s4, sf4);
 
         pie.getBorderPaint().setColor(Color.TRANSPARENT);
-        pie.getBackgroundPaint().setColor(Color.TRANSPARENT);
+        pie.getBackgroundPaint().setColor(Color.parseColor("#FFFFFF"));
+        pie.getTitleWidget().getLabelPaint().setColor(Color.parseColor("#000000"));
 
         pie.redraw();
         return  view;

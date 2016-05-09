@@ -12,7 +12,9 @@
         android:layout_height="fill_parent"
         android:layout_weight="1"
         androidPlot.title="A Simple Pie Chart"
-        android:background="#111111"
-        androidPlot.titleWidget.labelPaint.textSize="20sp"/>
+     
+        androidPlot.titleWidget.labelPaint.textColor="#111111"
+        androidPlot.titleWidget.labelPaint.textSize="20sp"
+         />
 
 </FrameLayout>
