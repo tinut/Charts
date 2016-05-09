@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import gadgeon.com.charts.charts.BarChart;
 import gadgeon.com.charts.charts.LineChart;
 import gadgeon.com.charts.charts.PieChartFragment;
+import gadgeon.com.charts.charts.StepChart;
 import gadgeon.com.charts.charts.ScatterChartFragment;
 
 public class DrawChartActivity extends AppCompatActivity {
@@ -54,9 +55,9 @@ public class DrawChartActivity extends AppCompatActivity {
                 return new PieChartFragment();
            case CHART_TYPE_SCATTER:
                 return new ScatterChartFragment();
-  /*           case CHART_TYPE_STEP:
-                return "Step Chart";
-            case CHART_TYPE_CANDLESTICK:
+            case CHART_TYPE_STEP:
+                return new StepChart();
+/*            case CHART_TYPE_CANDLESTICK:
                 return "Candle stick Chart";*/
         }
         return null;
