@@ -47,6 +47,7 @@
         ap:legendIconHeight="15dp"
         ap:legendIconWidth="15dp"
         ap:legendHeight="25dp"
+        ap:legendTextColor="#111111"
         ap:legendAnchorPosition="right_bottom"/>
 
     <LinearLayout
