@@ -1,6 +1,7 @@
 package gadgeon.com.charts.charts;
 
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import com.androidplot.xy.XYPlot;
 import com.androidplot.xy.XYSeries;
 import com.androidplot.xy.XYStepMode;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 import gadgeon.com.charts.R;
@@ -49,12 +51,21 @@ public class LineChart extends Fragment {
 
         plot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, RangeInc);
         plot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, DomainInc);
+        plot.setDomainValueFormat(new DecimalFormat("0"));
+        plot.setRangeValueFormat(new DecimalFormat("0"));
+
+        Paint borderPaint = new Paint();
+        borderPaint.setStyle(Paint.Style.STROKE);
+        borderPaint.setColor(Color.BLACK);
+        borderPaint.setAlpha(100);
+        plot.getGraphWidget().setRangeOriginLinePaint(borderPaint);
+        plot.getGraphWidget().setDomainOriginLinePaint(borderPaint);
         updatePlot();
         return view;
     }
     private void updatePlot() {
 
-        XYSeries series1= new SimpleXYSeries(Arrays.asList(series1Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"");
+        XYSeries series1= new SimpleXYSeries(Arrays.asList(series1Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"RED");
 
         LineAndPointFormatter series1Format = new LineAndPointFormatter(Color.parseColor("#FF0000"),Color.parseColor("#FF5555"),null,null);
         series1Format.setPointLabelFormatter(new PointLabelFormatter(Color.parseColor("#111111")));
