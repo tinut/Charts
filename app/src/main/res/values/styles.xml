@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:theme">@style/mystyle</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -16,5 +17,42 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="mystyle" parent="AppTheme">
+        <item name="borderColor">#111111</item>
+        <item name="backgroundColor">#FFFFFF</item>
+        <item name="graphBackgroundColor">#FFFFFF</item>
+        <item name="gridBackgroundColor">#FFFFFF</item>
+        <item name="graphMarginTop">20dp</item>
+        <item name="graphMarginBottom">25dp</item>
+        <item name="graphMarginLeft">25dp</item>
+        <item name="graphMarginRight">20dp</item>
+        <item name="graphDomainLineColor">#FFFFFF</item>
+        <item name="graphRangeLineColor">#FFFFFF</item>
+        <item name="labelTextSize">13sp</item>
+        <item name="labelTextColor">#111111</item>
+        <item name="rangeLabelTextSize">13sp</item>
+        <item name="rangeLabelTextColor">#111111</item>
+        <item name="domainLabelTextSize">13sp</item>
+        <item name="domainLabelTextColor">#111111</item>
+        <item name="rangeOriginTickLabelTextColor">#111111</item>
+        <item name="rangeOriginTickLabelTextSize">15sp</item>
+        <item name="domainOriginTickLabelTextColor">#111111</item>
+        <item name="domainOriginTickLabelTextSize">15sp</item>
+        <item name="rangeTickLabelTextSize">15sp</item>
+        <item name="rangeTickLabelTextColor">#111111</item>
+        <item name="domainTickLabelTextSize">15sp</item>
+        <item name="domainTickLabelTextColor">#111111</item>
+        <item name="legendTextSize">15sp</item>
+        <item name="legendTextColor">#111111</item>
+        <item name="legendIconHeight">15sp</item>
+        <item name="legendIconWidth">15sp</item>
+        <item name="legendHeight">25sp</item>
+        <item name="legendAnchorPosition">right_bottom</item>
+        <item name="gridPaddingLeft">20dp</item>
+        <item name="gridPaddingRight">20dp</item>
+        <item name="gridPaddingTop">20dp</item>
+        <item name="gridPaddingBottom">20dp</item>
+    </style>
 
 </resources>

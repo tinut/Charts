@@ -1,6 +1,7 @@
 package gadgeon.com.charts.charts;
 
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,13 +23,13 @@ import java.util.Arrays;
 import gadgeon.com.charts.R;
 
 
-public class StepChart extends android.support.v4.app.Fragment {
+public class StepChartFragment extends android.support.v4.app.Fragment {
 
     private XYPlot plot;
     Number[] series1Numbers = {1, 2, 3, 4, 2, 3, 4,2,3,4,2};
     static final int DomainMin = 0, DomainMax = 10, DomainInc = 1;
 
-    public StepChart() {
+    public StepChartFragment() {
     }
 
 
@@ -45,7 +46,7 @@ public class StepChart extends android.support.v4.app.Fragment {
 
         XYSeries series2 = new SimpleXYSeries(Arrays.asList(series1Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "POINTS");
 
-        StepFormatter stepFormatter  = new StepFormatter(Color.parseColor("#FF0000"),Color.DKGRAY);
+        StepFormatter stepFormatter  = new StepFormatter(Color.parseColor("#FF0000"),Color.WHITE);
         stepFormatter.getLinePaint().setStrokeWidth(3);
 
         plot.addSeries(series2, stepFormatter);
@@ -57,6 +58,13 @@ public class StepChart extends android.support.v4.app.Fragment {
 
         plot.setTicksPerRangeLabel(1);
         plot.setTicksPerDomainLabel(1);
+
+        Paint borderPaint = new Paint();
+        borderPaint.setStyle(Paint.Style.STROKE);
+        borderPaint.setColor(Color.BLACK);
+        borderPaint.setAlpha(100);
+        plot.getGraphWidget().setRangeOriginLinePaint(borderPaint);
+        plot.getGraphWidget().setDomainOriginLinePaint(borderPaint);
 
         plot.setDomainValueFormat(new DecimalFormat("0"));
 

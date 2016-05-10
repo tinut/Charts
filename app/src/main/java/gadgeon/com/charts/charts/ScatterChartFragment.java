@@ -1,6 +1,7 @@
 package gadgeon.com.charts.charts;
 
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,9 +16,6 @@ import com.androidplot.xy.XYSeries;
 
 import gadgeon.com.charts.R;
 
-/**
- * Created by febin on 6/5/16.
- */
 public class ScatterChartFragment extends Fragment{
 
     public void ScatterChartFragment(){
@@ -47,6 +45,12 @@ public class ScatterChartFragment extends Fragment{
         plot.addSeries(series1, series1Format);
         plot.setTicksPerRangeLabel(1);
         plot.getGraphWidget().setDomainLabelOrientation(-45);
+        Paint borderPaint = new Paint();
+        borderPaint.setStyle(Paint.Style.STROKE);
+        borderPaint.setColor(Color.BLACK);
+        borderPaint.setAlpha(100);
+        plot.getGraphWidget().setRangeOriginLinePaint(borderPaint);
+        plot.getGraphWidget().setDomainOriginLinePaint(borderPaint);
 
         return view;
     }

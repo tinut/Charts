@@ -21,15 +21,15 @@ import java.util.Arrays;
 
 import gadgeon.com.charts.R;
 
-public class LineChart extends Fragment {
+public class LineChartFragment extends Fragment {
 
     private XYPlot plot;
     private XYSeries series;
     Number[] series1Numbers = {10,30,20,50,80,55};
-    static final int DomainMin=0, DomainMax=10, RangeMin=0, RangeMax=100, RangeInc=10, DomainInc=1;
+    static final int DomainMin = 0, DomainMax = 10, RangeMin = 0, RangeMax = 100, RangeInc = 10, DomainInc = 1;
 
 
-    public LineChart() {
+    public LineChartFragment() {
         // Required empty public constructor
     }
 
@@ -63,6 +63,7 @@ public class LineChart extends Fragment {
         updatePlot();
         return view;
     }
+
     private void updatePlot() {
 
         XYSeries series1= new SimpleXYSeries(Arrays.asList(series1Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"RED");
