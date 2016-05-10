@@ -41,16 +41,16 @@ public class PieChartFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_pie_chart, container, false);
         pie = (PieChart) view.findViewById(R.id.pieplot);
 
-        SegmentFormatter sf1 = new SegmentFormatter(Color.parseColor("#FF0000"));
+        SegmentFormatter sf1 = new SegmentFormatter(Color.parseColor("#111111"));
         sf1.getLabelPaint().setTextSize(50);
 
-        SegmentFormatter sf2 = new SegmentFormatter(Color.parseColor("#0000FF"));
+        SegmentFormatter sf2 = new SegmentFormatter(Color.parseColor("#FF600505"));
         sf2.getLabelPaint().setTextSize(50);
 
-        SegmentFormatter sf3 = new SegmentFormatter(Color.parseColor("#00FF00"));
+        SegmentFormatter sf3 = new SegmentFormatter(Color.parseColor("#FFFF0000"));
         sf3.getLabelPaint().setTextSize(50);
 
-        SegmentFormatter sf4 = new SegmentFormatter(Color.parseColor("#FF00FF"));
+        SegmentFormatter sf4 = new SegmentFormatter(Color.parseColor("#FF996262"));
         sf4.getLabelPaint().setTextSize(50);
 
         pie.addSeries(s1, sf1);

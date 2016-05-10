@@ -1,6 +1,7 @@
 package gadgeon.com.charts;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -35,7 +36,7 @@ public class DrawChartActivity extends AppCompatActivity {
     }
     @Override
     public boolean onPrepareOptionsMenu (Menu menu) {
-        if (chartItemPos == 3) {
+        if (chartItemPos == 5) {
             menu.getItem(0).setEnabled(false);
             menu.getItem(0).setVisible(false);
             this.invalidateOptionsMenu();
@@ -77,6 +78,7 @@ public class DrawChartActivity extends AppCompatActivity {
             chartItemPos = bundle.getInt(chartTypeArg);
             chartType = ChartType.values()[chartItemPos];
             toolbar.setTitle(chartType.toString());
+            toolbar.setTitleTextColor(Color.WHITE);
             setSupportActionBar(toolbar);
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

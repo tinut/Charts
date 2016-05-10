@@ -39,8 +39,9 @@ public class ScatterChartFragment extends Fragment{
         plot.setRangeBoundaries(0, 80, BoundaryMode.FIXED);
 
         LineAndPointFormatter series1Format = new LineAndPointFormatter(Color.parseColor("#00000000"),
-                Color.parseColor("#6666FF"),Color.parseColor("#00000000"),null);
+                Color.RED,Color.parseColor("#00000000"),null);
         series1Format.getVertexPaint().setStrokeWidth(20);
+
 
         plot.addSeries(series1, series1Format);
         plot.setTicksPerRangeLabel(1);

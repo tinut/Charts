@@ -75,6 +75,12 @@ public class CandlestickChartFragment extends Fragment{
         plot.getGraphWidget().setRangeOriginLinePaint(borderPaint);
         plot.getGraphWidget().setDomainOriginLinePaint(borderPaint);
 
+        Paint wickPaint = new Paint();
+        wickPaint.setColor(Color.BLACK);
+        wickPaint.setAlpha(100);
+        formatter.setWickPaint(wickPaint);
+
+
         Paint rangeSubGridLinePaint = new Paint();
         rangeSubGridLinePaint.setColor(Color.WHITE);
         plot.getGraphWidget().setRangeSubGridLinePaint(rangeSubGridLinePaint);
