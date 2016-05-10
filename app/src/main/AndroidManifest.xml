@@ -21,7 +21,8 @@
         <activity
             android:name=".DrawChartActivity"
             android:label="@string/title_activity_draw_chart"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".LandingPageActivity"></activity>
     </application>
 
 </manifest>

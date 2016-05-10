@@ -2,6 +2,8 @@ package gadgeon.com.charts;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -48,22 +50,34 @@ public class LandingPageActivity extends AppCompatActivity {
             }
 
             TextView  txtView = (TextView)convertView.findViewById(R.id.list_item_text);
+
+            //newfont
+            Typeface myface= Typeface.createFromAsset(getAssets(),"ForgetMeKnot-Roman.otf");
+            txtView.setTypeface(myface);
             txtView.setText(ChartType.values()[position].toString());
             return convertView;
         }
     }
+
+
 
     ChartListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_landing_page);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if(toolbar!=null)
+     if(toolbar!=null) {
             toolbar.setTitle(R.string.title_charts);
-
+            toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
