@@ -96,6 +96,8 @@ public class LandingPageActivity extends AppCompatActivity {
                     Intent intent = new Intent(LandingPageActivity.this, DrawChartActivity.class);
                     intent.putExtra("chartType", position);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
                 }
             });
         }

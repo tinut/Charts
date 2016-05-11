@@ -59,9 +59,15 @@ public class DrawChartActivity extends AppCompatActivity {
             chartFragment = getChartFragment(chartType);
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left);
             fragmentTransaction.replace(R.id.draw_chart_fragment, chartFragment);
+
+
             fragmentTransaction.commit();
+
         }
+
+
         return super.onOptionsItemSelected(item);
     }
 
