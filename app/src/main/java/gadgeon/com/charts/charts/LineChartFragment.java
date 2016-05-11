@@ -70,7 +70,6 @@ public class LineChartFragment extends Fragment {
 
         LineAndPointFormatter series1Format = new LineAndPointFormatter(Color.parseColor("#FF0000"),Color.parseColor("#FF5555"),null,null);
         series1Format.setPointLabelFormatter(new PointLabelFormatter(Color.parseColor("#111111")));
-        series1Format.configure(getContext(),R.xml.line_point_formatter_with_labels);
         series1Format.getVertexPaint().setStrokeWidth(20);
 
         plot.addSeries(series1, series1Format);
