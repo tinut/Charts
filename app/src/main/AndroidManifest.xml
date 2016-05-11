@@ -8,21 +8,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/mystyle">
+
         <activity
             android:name=".LandingPageActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".DrawChartActivity"
             android:label="@string/title_activity_draw_chart"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".LandingPageActivity"></activity>
+
     </application>
 
 </manifest>

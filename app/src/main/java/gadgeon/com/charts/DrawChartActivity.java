@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 
@@ -53,6 +54,7 @@ public class DrawChartActivity extends AppCompatActivity {
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbar.setTitle(chartType.toString());
             setSupportActionBar(toolbar);
+            toolbar.setTitleTextColor(Color.WHITE);
             Fragment chartFragment;
             chartFragment = getChartFragment(chartType);
             FragmentManager fm = getSupportFragmentManager();
@@ -68,9 +70,11 @@ public class DrawChartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_draw_chart);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
 
 
         Bundle bundle = getIntent().getExtras();
@@ -80,7 +84,7 @@ public class DrawChartActivity extends AppCompatActivity {
             toolbar.setTitle(chartType.toString());
             toolbar.setTitleTextColor(Color.WHITE);
             setSupportActionBar(toolbar);
-
+            toolbar.setTitleTextColor(Color.WHITE);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
